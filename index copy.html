@@ -3,73 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <title> Ruirui Zhong </title>
-    <style>
-        .bib-button {
-            display: inline-block;
-            /* background-color: #4CAF50; */
-            color: rgb(3, 103, 245);
-            padding: 2px 8px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-left: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-        .bib-content {
-            display: none;
-            background-color: #f9f9f9;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            white-space: pre-wrap;
-            font-family: monospace;
-            font-size: 0.9em;
-            overflow: auto;
-            max-height: 300px;
-        }
-        div.research-paper {
-            transition: all 0.3s ease;
-            overflow: visible !important;
-            position: relative;
-            height: auto !important;
-            min-height: 4em !important;
-        }
-        .research-paper .research-thumb {
-            float: left;
-            margin-right: 20px;
-        }
-        .research-paper p {
-            overflow: visible;
-        }
-    </style>
 </head>
 
 <body>
-    <script>
-        async function toggleBib(bibId, paperDiv) {
-            const bibContent = document.getElementById(bibId);
-            if (bibContent.style.display === "none" || !bibContent.style.display) {
-                if (!bibContent.textContent.trim()) {
-                    try {
-                        const response = await fetch(`assets/files/bibtex/${bibId}.bib`);
-                        const text = await response.text();
-                        bibContent.textContent = text;
-                    } catch (error) {
-                        console.error('Error loading bib file:', error);
-                        bibContent.textContent = 'Error loading BibTeX content';
-                    }
-                }
-                bibContent.style.display = "block";
-            } else {
-                bibContent.style.display = "none";
-            }
-        }
-    </script>
     <div style="width:1000px;margin: 0px auto;">
         <header id="header" width="400px" style="display:flex;justify-content: space-around;">
             <a href="#profile-intro">Home</a>
@@ -98,17 +38,13 @@
                         Google Scholar
                     </a>
                     /
-                    <a href="https://orcid.org/0000-0002-6761-2744">
-                        ORCID
-                    </a>
-                    /
                     <a href="https://github.com/expressorrz">
                         Github
                     </a>
-                    <!-- /
+                    /
                     <a href="assets/files/cv.pdf">
                       CV
-                    </a> -->
+                    </a>
                 </div>
             </div>
             <div style="clear: both;"></div>
@@ -120,7 +56,7 @@
                 <li> <b>Jul 2025</b> One collaborative review paper about Digital Twin and Assembly Precision has been accepted by CJME!
                 <li> <b>Jul 2025</b> One research paper in FJSP has been accepted by IJPR!
                 <li> <b>Jul 2025</b> One research paper in Traffic Forecasting has been accepted by TJS!
-                <li> <b>Oct 2024</b> I started my studies at KTH as a visiting Ph.D. student, under the supervision of Prof. Xi Vincent Wang and Prof. Lihui Wang!
+                <li> <b>Oct 2024</b> I started my studies at KTH as a visiting Ph.D. student, under the supervision of Prof. Xi Wang and Prof. Lihui Wang!
                 <li> <b>Jul 2024</b> Our poster won the Best Poster Award at the 8th Academic Conference on Digital Twins and Smart Manufacturing Services!
                 <li> <b>Jun 2024</b> Research Paper Edge Computing Empowered Digital Twin has been accepted by IEEE CASE 2024!
                 <li> <b>May 2024</b> A paper about fault diagnosis has been accepted by IET Collaborative Intelligent Manufacturing!
@@ -140,9 +76,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/assemblyP.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1186/s10033-025-01224-8" class="research-proj-title">
                     Digital Twin-driven Inversion of Assembly Precision for Industrial Equipment: Challenges, Progress and Perspectives
-                </h3>
+                </a>
                 <p>
                     Dinghao Cheng,
                     Bingtao Hu,
@@ -152,19 +88,17 @@
                     Tianyue Wang,
                     Jianrong Tan
                     <br><span class="research-journal-title">Chinese Journal of Mechanical Engineering</span>, vol. 38, no. 1, pp. 1-24, 2025<br>
-                    <a href="https://doi.org/10.1186/s10033-025-01224-8">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('cheng2025digital', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="cheng2025digital" class="bib-content"></div>
                 </p>
+                <a href="https://doi.org/10.1186/s10033-025-01224-8">[Paper]</a>
             </div>
 
             <div class="research-paper">
                 <a class="research-thumb">
                     <img width="320" src="assets/images/fjsp.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1080/00207543.2025.2512226" class="research-proj-title">
                     Solving flexible job-shop problem considering skilled workers via multi-domain graph attention network
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Yixiong Feng,
@@ -174,19 +108,17 @@
                     Zhiwu Li,
                     Jianrong Tan
                     <br><span class="research-journal-title">International Journal of Production Research</span>, pp. 1-22, 2025<br>
-                    <a href="https://doi.org/10.1080/00207543.2025.2512226">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2025solving', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2025solving" class="bib-content"></div>
                 </p>
+                <a href="https://doi.org/10.1080/00207543.2025.2512226">[Paper]</a>
             </div>
 
             <div class="research-paper">
                 <a class="research-thumb">
                     <img width="320" src="assets/images/stg.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1007/s11227-025-07354-z" class="research-proj-title">
                     St-Graphormer: spatio-temporal graph transformer for end-to-end traffic forecasting
-                </h3>
+                </a>
                 <p>
                     Zhanchi Wang,
                     Yi Hu,
@@ -196,19 +128,17 @@
                     Yixiong Feng,
                     Jianrong Tan
                     <br><span class="research-journal-title">The Journal of Supercomputing</span>, vol. 81, no. 8, pp. 1-25, 2025<br>
-                    <a href="https://doi.org/10.1007/s11227-025-07354-z">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('wang2025stgraphormer', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="wang2025stgraphormer" class="bib-content"></div>
                 </p>
+                <a href="https://doi.org/10.1007/s11227-025-07354-z">[Paper]</a>
             </div>
 
             <div class="research-paper">
                 <a class="research-thumb">
                     <img width="320" src="assets/images/fedmamba.jpg" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1080/00207543.2024.2448604" class="research-proj-title">
                     Toward secure industrial internet of behaviours: a federated learning-based lightweight human behaviour recognition method with selective state space models
-                </h3>
+                </a>
                 <p>
                     Bingtao Hu,
                     <b><u>Ruirui Zhong</u></b>,
@@ -219,8 +149,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">International Journal of Production Research (IJPR)</span>, pp. 1-17, 2025<br>
                     <a href="https://doi.org/10.1080/00207543.2024.2448604">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('hu2025toward', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="hu2025toward" class="bib-content"></div>
                 </p>
             </div>
 
@@ -228,9 +156,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/programming.jpg" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1109/JIOT.2025.3567149" class="research-proj-title">
                     Hybrid Programming-based Scheduling Approach for Many Heterogeneous Computing Tasks with Asynchronous Generation in IIoT
-                </h3>
+                </a>
                 <p>
                     Bingtao Hu,
                     <b><u>Ruirui Zhong</u></b>,
@@ -241,17 +169,15 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">IEEE Internet of Things Journal (IoTJ)</span>, 2025<br>
                     <a href="https://doi.org/10.1109/JIOT.2025.3567149">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('hu2025hybrid', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="hu2025hybrid" class="bib-content"></div>
                 </p>
             </div>
             <div class="research-paper">
                 <a class="research-thumb">
                     <img width="320" src="assets/images/am.jpg" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1002/adma.202414519" class="research-proj-title">
                     Magnetointeractive Cr2Te3-Coated Liquid Metal Droplets for Flexible Memory Arrays and Wearable Sensors
-                </h3>
+                </a>
                 <p>
                     Puyan Li,
                     Yixiong Feng,
@@ -266,8 +192,6 @@
                     Xiuju Song
                     <br><span class="research-journal-title">Advanced Materials</span>, vol. 37, no. 13, pp. 2414519, 2025<br>
                     <a href="https://doi.org/10.1002/adma.202414519">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('li2025magnetointeractive', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="li2025magnetointeractive" class="bib-content"></div>
                 </p>
             </div>
             <h2 style="color: var(--blue2); margin-top: 1em;">2024</h2>
@@ -276,9 +200,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/neuro.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1016/j.neucom.2024.129193" class="research-proj-title">
                     Multi-factor embedding GNN-based traffic flow prediction considering intersection similarity
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Bingtao Hu,
@@ -291,8 +215,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Neurocomputing</span>, pp. 129193, 2024<br>
                     <a href="https://doi.org/10.1016/j.neucom.2024.129193">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024multi', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024multi" class="bib-content"></div>
                 </p>
             </div>
 
@@ -300,9 +222,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/dcdg.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1109/ICNSC62968.2024.10760119" class="research-proj-title">
                     Deep Causal Domain Generalization Network for Human Action Recognition in Internet of Behaviors
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Yixiong Feng,
@@ -312,8 +234,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">IEEE International Conference on Networking, Sensing and Control (ICNSC)</span>, pp. 1-6, 2024<br>
                     <a href="https://doi.org/10.1109/ICNSC62968.2024.10760119">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024deep', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024deep" class="bib-content"></div>
                 </p>
             </div>
 
@@ -321,9 +241,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/edge.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1109/CASE59546.2024.10711331" class="research-proj-title">
                     Edge Computing Empowered Digital Twin: An End-to-End Computing Task Scheduling Approach
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Yixiong Feng,
@@ -334,8 +254,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">IEEE International Conference on Automation Science and Engineering (CASE)</span>, pp. 3547-3552, 2024<br>
                     <a href="https://doi.org/10.1109/CASE59546.2024.10711331">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024edge', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024edge" class="bib-content"></div>
                 </p>
             </div>
 
@@ -343,9 +261,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/iet.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1049/cim2.12108" class="research-proj-title">
                     Uncertainty-aware Nuclear Power Turbine Vibration Fault Diagnosis Method Integrating Machine Learning and Heuristic Algorithm
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Yixiong Feng,
@@ -356,8 +274,6 @@
                     Chuanjiang Li
                     <br><span class="research-journal-title">IET Collaborative Intelligent Manufacturing</span>, 2024<br>
                     <a href="https://doi.org/10.1049/cim2.12108">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024uncertainty', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024uncertainty" class="bib-content"></div>
                 </p>
             </div>
 
@@ -365,9 +281,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/fmsj.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1007/s10696-024-09543-z" class="research-proj-title">
                     Smart scheduling of hanging workshop via digital twin and deep reinforcement learning
-                </h3>
+                </a>
                 <p>
                     Jianguo Pan,
                     <b><u>Ruirui Zhong</u></b>,
@@ -377,8 +293,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Flexible Services and Manufacturing Journal (FMSJ)</span>, pp. 1-22, 2024<br>
                     <a href="https://doi.org/10.1007/s10696-024-09543-z">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('pan2024smart', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="pan2024smart" class="bib-content"></div>
                 </p>
             </div>
 
@@ -386,9 +300,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/drt.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1007/s40974-024-00323-x" class="research-proj-title">
                     Lithium-ion battery remaining useful life prediction: a federated learning-based approach
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Bingtao Hu,
@@ -400,8 +314,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Energy, Ecology and Environment</span>, pp. 1-14, 2024<br>
                     <a href="https://doi.org/10.1007/s40974-024-00323-x">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024lithium', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024lithium" class="bib-content"></div>
                 </p>
             </div>
 
@@ -409,9 +321,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/jed.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1080/09544828.2024.2326111" class="research-proj-title">
                     Human-Robot handover task intention recognition framework by fusing human digital twin and deep domain adaptation
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Bingtao Hu,
@@ -423,8 +335,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Journal of Engineering Design</span>, pp. 1-17, 2024<br>
                     <a href="https://doi.org/10.1080/09544828.2024.2326111">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2024human', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2024human" class="bib-content"></div>
                 </p>
             </div>
 
@@ -432,9 +342,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/quality2.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1016/j.aei.2024.102860" class="research-proj-title">
                     Multiscale cost-sensitive learning-based assembly quality prediction approach under imbalanced data
-                </h3>
+                </a>
                 <p>
                     Tianyue Wang,
                     Bingtao Hu,
@@ -445,8 +355,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Advanced Engineering Informatics (AEI)</span>, vol. 62, pp. 102860, 2024<br>
                     <a href="https://doi.org/10.1016/j.aei.2024.102860">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('wang2024multiscale', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="wang2024multiscale" class="bib-content"></div>
                 </p>
             </div>
 
@@ -454,9 +362,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/quality1.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1016/j.aei.2023.102309" class="research-proj-title">
                     Two-stage imbalanced learning-based quality prediction method for wheel hub assembly
-                </h3>
+                </a>
                 <p>
                     Tianyue Wang,
                     Tao Peng,
@@ -467,8 +375,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Advanced Engineering Informatics (AEI)</span>, vol. 59, pp. 102309, 2024<br>
                     <a href="https://doi.org/10.1016/j.aei.2023.102309">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('wang2024two', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="wang2024two" class="bib-content"></div>
                 </p>
             </div>
 
@@ -478,9 +384,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/icmd.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1007/978-981-97-0922-9_18" class="research-proj-title">
                     A Human Digital Twin Based Framework for Human--Robot Hand-Over Task Intention Recognition
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Bingtao Hu,
@@ -490,8 +396,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">International Conference on Mechanical Design (ICMD)</span>, pp. 283-295, 2023<br>
                     <a href="https://doi.org/10.1007/978-981-97-0922-9_18">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2023human', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2023human" class="bib-content"></div>
                 </p>
             </div>
 
@@ -499,9 +403,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/cjme.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="https://doi.org/10.1186/s10033-023-00951-0" class="research-proj-title">
                     Construction of human digital twin model based on multimodal data and its application in locomotion mode identification
-                </h3>
+                </a>
                 <p>
                     <b><u>Ruirui Zhong</u></b>,
                     Bingtao Hu,
@@ -512,8 +416,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Chinese Journal of Mechanical Engineering (CJME)</span>, vol. 36, no. 1, pp. 126, 2023<br>
                     <a href="https://doi.org/10.1186/s10033-023-00951-0">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('zhong2023construction', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="zhong2023construction" class="bib-content"></div>
                 </p>
             </div>
 
@@ -521,9 +423,9 @@
                 <a class="research-thumb">
                     <img width="320" src="assets/images/cims.png" alt="">
                 </a>
-                <h3 class="research-proj-title">
+                <a href="http://www.cims-journal.cn/EN/10.13196/j.cims.2023.02.020" class="research-proj-title">
                     Irregular polygons nesting algorithm driven by design knowledge and application
-                </h3>
+                </a>
                 <p>
                     Yixiong Feng,
                     <b><u>Ruirui Zhong</u></b>,
@@ -535,8 +437,6 @@
                     Jianrong Tan
                     <br><span class="research-journal-title">Computer Integrated Manufacturing System (CIMS)</span>, vol. 29, no. 2, pp. 593, 2023<br>
                     <a href="http://www.cims-journal.cn/EN/10.13196/j.cims.2023.02.020">[Paper]</a>
-                    <span class="bib-button" onclick="toggleBib('feng2023irregular', this.closest('.research-paper'))">[Bib]</span>
-                    <div id="feng2023irregular" class="bib-content"></div>
                 </p>
             </div>
 
@@ -550,7 +450,6 @@
             <div>
                 <h2 style="color: var(--blue1); margin-top: 1em;">Activities</h2>
                 <ul style="margin-left: 1em;">
-                    <li>• <i>Local Organising Committee Member at the 74th CIRP General Assembly (CIRP GA 2025)</i></li>
                     <li>• <i>Session Chair at the 11th IFAC Conference on Manufacturing Modelling, Management and Control (IFAC MIM 2025)</i></li>
                 </ul>
 
@@ -562,22 +461,24 @@
                 </ul>
 
                 <h2 style="color: var(--blue1); margin-top: 1em;">Peer Reviewer Service</h2>
+                <p><b>Served as a journal reviewer for:</b></p>
                 <ul style="margin-left: 1em;">
-                    <li>• <b>Served as a journal reviewer for:</b></li>
-                    <li style="margin-left: 2em;">▫ <i>IEEE Transactions on Industrial Informatics</i></li>
-                    <li style="margin-left: 2em;">▫ <i>Robotics and Computer-Integrated Manufacturing</i></li>
-                    <li style="margin-left: 2em;">▫ <i>Advanced Engineering Informatics</i></li>
-                    <li style="margin-left: 2em;">▫ <i>International Journal of Production Research</i></li>
-                    <li style="margin-left: 2em;">▫ <i>Nonlinear Dynamics</i></li>
-                    <li style="margin-left: 2em;">▫ <i>Chinese Journal of Mechanical Engineering</i></li>
-                    <li style="margin-left: 2em;">▫ <i>The Journal of Supercomputing</i></li>
-                    <li style="margin-left: 2em;">▫ <i>Neural Computing and Applications</i></li>
-                    <li>• <b>Served as a conference reviewer for:</b></li>
-                    <li style="margin-left: 2em;">▫ <i>IEEE CASE 2025</i></li>
-                    <li style="margin-left: 2em;">▫ <i>SME NAMRC 53</i></li>
-                    <li style="margin-left: 2em;">▫ <i>IFAC MIM 2025</i></li>
-                    <li style="margin-left: 2em;">▫ <i>IEEE ICNSC 2024</i></li>
-                    <li style="margin-left: 2em;">▫ <i>ACAIT 2023</i></li>
+                    <li>• <i>IEEE Transactions on Industrial Informatics</i></li>
+                    <li>• <i>Robotics and Computer-Integrated Manufacturing</i></li>
+                    <li>• <i>Advanced Engineering Informatics</i></li>
+                    <li>• <i>International Journal of Production Research</i></li>
+                    <li>• <i>Nonlinear Dynamics</i></li>
+                    <li>• <i>Chinese Journal of Mechanical Engineering</i></li>
+                    <li>• <i>The Journal of Supercomputing</i></li>
+                    <li>• <i>Neural Computing and Applications</i></li>
+                </ul>
+                <p><b>Served as a conference reviewer for:</b></p>
+                <ul style="margin-left: 1em;">
+                    <li>• <i>IEEE CASE 2025</i></li>
+                    <li>• <i>SME NAMRC 53</i></li>
+                    <li>• <i>IFAC MIM 2025</i></li>
+                    <li>• <i>IEEE ICNSC 2024</i></li>
+                    <li>• <i>ACAIT 2023</i></li>
                 </ul>
 
                 <h2 style="color: var(--blue1); margin-top: 1em;">Membership</h2>
