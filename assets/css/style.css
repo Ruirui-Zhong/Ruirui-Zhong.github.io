@@ -133,8 +133,8 @@ strong {
 }
 
 .research-thumb {
-    width: 12em;
-    height: 12em;
+    width: 18em;
+    height: 18em;
     float: left;
     margin-top: 7px;
     padding-right: 30px;
@@ -159,6 +159,7 @@ strong {
     font-size: 1.1em;
 }
 
+
 .research-journal-title {
     font-style: italic;
 }
@@ -166,14 +167,43 @@ strong {
 .research-paper {
     padding: 1em;
     margin: 0;
-    background-color: #f8f9fa;
+    background-color: #ffff;
     overflow: hidden;
     height: 4em;
 }
 
 .research-paper:nth-child(even) {
-    background-color: #e8e9e9;
+    background-color: #ffff;
 }
+
+.project-work {
+    padding: 0em;
+    margin: 0;
+    background-color: #ffff;
+    overflow: hidden;
+    height: 4em;
+}
+
+.project-thumb {
+    width: 18em;
+    height: 18em;
+    float: left;
+    margin-top: 7px;
+    padding-right: 30px;
+    margin-bottom: 0;
+    /* display: none; */
+}
+
+.project-proj-title {
+    color: var(--blue1);
+    font-weight: 600;
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+
+.project-work:nth-child(even) {
+    background-color: #ffff;
+}   
 
 /* Modal styles */
 .modal {
