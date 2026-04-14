@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:wght@400;600;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <title>Research | Ruirui Zhong</title>
+    <style>
+        .bib-button {
+            display: inline-block;
+            color: var(--pink1);
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .bib-content {
+            display: none;
+            background-color: var(--luka-bib-bg);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid var(--luka-bib-border);
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 0.9em;
+            overflow: auto;
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body class="theme-luka">
+    <script>
+        const bibMetaCache = new Map();
+
+        async function loadBibMeta(bibId) {
+            if (bibMetaCache.has(bibId)) {
+                return bibMetaCache.get(bibId);
+            }
+
+            const response = await fetch(`assets/files/bibtex/${bibId}.bib`);
+            if (!response.ok) {
+                throw new Error(`Failed to load bib file: ${bibId}.bib`);
+            }
+
+            const text = await response.text();
+            const doiMatch = text.match(/doi\s*=\s*[{\"]([^}\"]+)[}\"]/i);
+            const doi = doiMatch ? doiMatch[1].trim() : "";
+            const doiUrl = doi ? (doi.startsWith("http") ? doi : `https://doi.org/${doi}`) : "";
+            const meta = { text, doi, doiUrl };
+            bibMetaCache.set(bibId, meta);
+            return meta;
+        }
+
+        async function toggleBib(bibId) {
+            const bibContent = document.getElementById(bibId);
+            if (bibContent.style.display === "none" || !bibContent.style.display) {
+                if (!bibContent.textContent.trim()) {
+                    try {
+                        const meta = await loadBibMeta(bibId);
+                        bibContent.textContent = meta.text;
+                    } catch (error) {
+                        console.error('Error loading bib file:', error);
+                        bibContent.textContent = 'Error loading BibTeX content';
+                    }
+                }
+                bibContent.style.display = "block";
+            } else {
+                bibContent.style.display = "none";
+            }
+        }
+
+        function removeScholarLinks() {
+            const scholarLinks = document.querySelectorAll('.publication-list a');
+            scholarLinks.forEach((link) => {
+                if (link.textContent.trim().toLowerCase() !== 'scholar') {
+                    return;
+                }
+
+                const prev = link.previousSibling;
+                const next = link.nextSibling;
+
+                if (prev && prev.nodeType === Node.TEXT_NODE) {
+                    prev.textContent = prev.textContent.replace(/\s*\/\s*$/, '');
+                    if (!prev.textContent.trim()) {
+                        prev.remove();
+                    }
+                }
+
+                if (next && next.nodeType === Node.TEXT_NODE) {
+                    next.textContent = next.textContent.replace(/^\s*\/\s*/, '');
+                    if (!next.textContent.trim()) {
+                        next.remove();
+                    }
+                }
+
+                link.remove();
+            });
+        }
+
+        async function injectDoiButtons() {
+            const bibButtons = document.querySelectorAll('.publication-list .bib-button[onclick^="toggleBib"]');
+
+            for (const bibButton of bibButtons) {
+                const onclickText = bibButton.getAttribute('onclick') || '';
+                const match = onclickText.match(/toggleBib\('([^']+)'\)/);
+                if (!match) {
+                    continue;
+                }
+
+                const bibId = match[1];
+                try {
+                    const meta = await loadBibMeta(bibId);
+                    if (!meta.doiUrl) {
+                        continue;
+                    }
+
+                    if (bibButton.parentElement.querySelector(`a[data-doi-for="${bibId}"]`)) {
+                        continue;
+                    }
+
+                    const doiLink = document.createElement('a');
+                    doiLink.className = 'bib-button';
+                    doiLink.dataset.doiFor = bibId;
+                    doiLink.href = meta.doiUrl;
+                    doiLink.target = '_blank';
+                    doiLink.rel = 'noopener noreferrer';
+                    doiLink.textContent = 'DOI';
+
+                    bibButton.parentNode.insertBefore(doiLink, bibButton);
+                    bibButton.parentNode.insertBefore(document.createTextNode(' / '), bibButton);
+                } catch (error) {
+                    console.error(`Error resolving DOI for ${bibId}:`, error);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            removeScholarLinks();
+            await injectDoiButtons();
+        });
+    </script>
+
+    <div class="site-shell">
+        <header id="header">
+            <div class="nav-right">
+                <a href="index.html">Home</a>
+                <a class="active" href="research.html">Publications</a>
+                <a href="awards.html">Awards</a>
+                <a href="academic-activities.html">Academic activities</a>
+                <a href="projects.html">Project</a>
+                <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+            </div>
+        </header>
+
+        <div class="section visible" id="research">
+            <h1><u>Publications</u></h1>
+
+            <h2 class="others-title">Journal Papers</h2>
+            <ol class="publication-list">
+                <li>
+                    <span class="pub-title">A two-stage framework for learning human-to-robot object handover policy from 4D spatiotemporal flow</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Z Liu, Q Qin, Y Feng, XV Wang, L Wang, J Tan<br>
+                    <span class="research-journal-title">Robotics and Computer-Integrated Manufacturing 98, 103171</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:f2IySw72cVMC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">FineMLD: A fine-grained motion latent diffusion for human motion prediction in Human–robot Collaboration</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Y Feng, Z Liu, Q Qin, XV Wang, L Wang, J Tan<br>
+                    <span class="research-journal-title">Advanced Engineering Informatics 70, 104119</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:EUQCXRtRnyEC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">ConstrucTwin: Digital Twin-Driven Multirobot Construction System Toward Industry 5.0</span><br>
+                    Z Liu, J Silva, <b><u>R Zhong</u></b>, Q Qin, N Roy, VN Fernandez-Ayala, J Lesko, U Håkansson, S Sandberg, D V Dimarogonas, J Gross, X V Wang, L Wang<br>
+                    <span class="research-journal-title">IEEE Transactions on Systems, Man, and Cybernetics: Systems</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:xtRiw3GOFMkC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Robot digital twin systems in manufacturing: Technologies, applications, trends and challenges</span><br>
+                    Q Qin, Z Liu, <b><u>R Zhong</u></b>, XV Wang, L Wang, M Wiktorsson, W Wang<br>
+                    <span class="research-journal-title">Robotics and Computer-Integrated Manufacturing 97, 103103</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:u_35RYKgDlwC">Scholar</a> / <span class="bib-button" onclick="toggleBib('qin2026robot')">Bib</span>
+                    <div id="qin2026robot" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Fatigue delamination shape prognostics in composites using numerical simulation-assisted transfer learning</span><br>
+                    <b><u>R Zhong</u></b>, XV Wang, L Wang, M Chiachío, F Cadini, C Sbarufatti, T Li<br>
+                    <span class="research-journal-title">Advanced Engineering Informatics 69, 104025</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:bFI3QPDXJZMC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Designing likelihood function under nuisance components in block particle filter</span><br>
+                    T Li, <b><u>R Zhong</u></b>, T Wang, J Kronqvist, M Romero, M Xiao, XV Wang<br>
+                    <span class="research-journal-title">Mechanical Systems and Signal Processing 241 (11359), 5</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:_xSYboBqXhAC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Human-robot handover task intention recognition framework by fusing human digital twin and deep domain adaptation</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Z Hong, Z Zhang, S Lou, X Song, Y Feng, J Tan<br>
+                    <span class="research-journal-title">Journal of Engineering Design 36 (11), 2055-2071</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:abG-DnoFyZgC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2024human')">Bib</span>
+                    <div id="zhong2024human" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Solving flexible job-shop problem considering skilled workers via multi-domain graph attention network</span><br>
+                    <b><u>R Zhong</u></b>, Y Feng, A Zhang, C Li, K Jin, Z Li, J Tan<br>
+                    <span class="research-journal-title">International Journal of Production Research, 1-22</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:HoB7MX3m0LUC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2025solving')">Bib</span>
+                    <div id="zhong2025solving" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Digital twin-driven inversion of assembly precision for industrial equipment: challenges, progress and perspectives</span><br>
+                    D Cheng, B Hu, Y Feng, J Yang, <b><u>R Zhong</u></b>, T Wang, J Tan<br>
+                    <span class="research-journal-title">Chinese Journal of Mechanical Engineering 38 (1), 75</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:M05iB0D1s5AC">Scholar</a> / <span class="bib-button" onclick="toggleBib('cheng2025digital')">Bib</span>
+                    <div id="cheng2025digital" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">St-Graphormer: spatio-temporal graph transformer for end-to-end traffic forecasting</span><br>
+                    Z Wang, Y Hu, <b><u>R Zhong</u></b>, B Hu, D Cheng, Y Feng, J Tan<br>
+                    <span class="research-journal-title">The Journal of Supercomputing 81 (8), 896</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:ldfaerwXgEUC">Scholar</a> / <span class="bib-button" onclick="toggleBib('wang2025stgraphormer')">Bib</span>
+                    <div id="wang2025stgraphormer" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Hybrid programming-based scheduling approach for many heterogeneous computing tasks with asynchronous generation in IIoT</span><br>
+                    B Hu, <b><u>R Zhong</u></b>, Y Wang, T Wang, Y Feng, MC Zhou, J Tan<br>
+                    <span class="research-journal-title">IEEE Internet of Things Journal</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:70eg2SAEIzsC">Scholar</a> / <span class="bib-button" onclick="toggleBib('hu2025hybrid')">Bib</span>
+                    <div id="hu2025hybrid" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Magnetointeractive Cr2Te3‐Coated Liquid Metal Droplets for Flexible Memory Arrays and Wearable Sensors</span><br>
+                    P Li, Y Feng, C Ding, <b><u>R Zhong</u></b>, W Yan, J Song, Z Hong, B Hu, J Tan, ...<br>
+                    <span class="research-journal-title">Advanced Materials 37 (13), 2414519</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:blknAaTinKkC">Scholar</a> / <span class="bib-button" onclick="toggleBib('li2025magnetointeractive')">Bib</span>
+                    <div id="li2025magnetointeractive" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Multi-factor embedding GNN-based traffic flow prediction considering intersection similarity</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, F Wang, Y Feng, Z Li, X Song, Y Wang, S Lou, J Tan<br>
+                    <span class="research-journal-title">Neurocomputing 620, 129193</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:JV2RwH3_ST0C">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2024multi')">Bib</span>
+                    <div id="zhong2024multi" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Smart scheduling of hanging workshop via digital twin and deep reinforcement learning: Smart scheduling of hanging workshop via digital twin...: J. Pan et al.</span><br>
+                    J Pan, <b><u>R Zhong</u></b>, B Hu, Y Feng, Z Zhang, J Tan<br>
+                    <span class="research-journal-title">Flexible Services & Manufacturing Journal 37 (1)</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:dhFuZR0502QC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Toward secure industrial internet of behaviours: a federated learning-based lightweight human behaviour recognition method with selective state space models</span><br>
+                    B Hu, <b><u>R Zhong</u></b>, Y Feng, J Yang, P Li, M Chen, J Tan<br>
+                    <span class="research-journal-title">International Journal of Production Research, 1-17</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:YFjsv_pBGBYC">Scholar</a> / <span class="bib-button" onclick="toggleBib('hu2025toward')">Bib</span>
+                    <div id="hu2025toward" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">A federated deep domain adaptation‐based framework for nuclear power steam turbines considering privacy‐preserving</span><br>
+                    B Hu, <b><u>R Zhong</u></b>, J Song, J Guo, Y Wang, S Lou, J Tan<br>
+                    <span class="research-journal-title">IET Collaborative Intelligent Manufacturing 7 (1), e12110</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:3s1wT3WcHBgC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Digital Shop Floor Manufacturing Capability Modeling and Adaptive Scheduling in Human-cyber-physical Interconnected Environment</span><br>
+                    HU Bingtao, <b><u>R Zhong</u></b>, Y FENG, C YANG, T WANG, Z HONG, J TAN<br>
+                    <span class="research-journal-title">Journal of Mechanical Engineering 61 (3), 23-39</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:RYcK_YlVTxYC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Multiscale cost-sensitive learning-based assembly quality prediction approach under imbalanced data</span><br>
+                    T Wang, B Hu, Y Feng, H Gong, <b><u>R Zhong</u></b>, C Yang, J Tan<br>
+                    <span class="research-journal-title">Advanced Engineering Informatics 62, 102860</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:TQgYirikUcIC">Scholar</a> / <span class="bib-button" onclick="toggleBib('wang2024multiscale')">Bib</span>
+                    <div id="wang2024multiscale" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Lithium-ion battery remaining useful life prediction: a federated learning-based approach: R. Zhong et al.</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Y Feng, S Lou, Z Hong, F Wang, G Li, J Tan<br>
+                    <span class="research-journal-title">Energy, Ecology and Environment 9 (5), 549-562</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:Wp0gIr-vW9MC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Uncertainty‐aware nuclear power turbine vibration fault diagnosis method integrating machine learning and heuristic algorithm</span><br>
+                    <b><u>R Zhong</u></b>, Y Feng, P Li, X Wu, A Guo, A Zhang, C Li<br>
+                    <span class="research-journal-title">IET Collaborative Intelligent Manufacturing 6 (3), e12108</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:IWHjjKOFINEC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2024uncertainty')">Bib</span>
+                    <div id="zhong2024uncertainty" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Two-stage imbalanced learning-based quality prediction method for wheel hub assembly</span><br>
+                    T Wang, T Peng, B Hu, <b><u>R Zhong</u></b>, Y Feng, X Chen, J Tan<br>
+                    <span class="research-journal-title">Advanced Engineering Informatics 59, 102309</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:UeHWp8X0CEIC">Scholar</a> / <span class="bib-button" onclick="toggleBib('wang2024two')">Bib</span>
+                    <div id="wang2024two" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Construction of human digital twin model based on multimodal data and its application in locomotion mode identification</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Y Feng, H Zheng, Z Hong, S Lou, J Tan<br>
+                    <span class="research-journal-title">Chinese Journal of Mechanical Engineering 36 (1), 126</span>, 2023<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:d1gkVwhDpl0C">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2023construction')">Bib</span>
+                    <div id="zhong2023construction" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Irregular polygons nesting algorithm driven by design knowledge and application</span><br>
+                    F Yixiong, <b><u>R Zhong</u></b>, Z Zhifeng, H Cheng, Z LI, B Hu, Z Hong, J Tan<br>
+                    <span class="research-journal-title">Computer Integrated Manufacturing System 29 (2), 593</span>, 2023<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:hFOr9nPyWt4C">Scholar</a> / <span class="bib-button" onclick="toggleBib('feng2023irregular')">Bib</span>
+                    <div id="feng2023irregular" class="bib-content"></div>
+                </li>
+            </ol>
+
+            <h2 class="others-title">Conference Papers</h2>
+            <ol class="publication-list">
+                <li>
+                    <span class="pub-title">Integrating Domain Knowledge and Data for Fault Diagnosis in Production Machinery: A Hybrid Framework</span><br>
+                    P Sun, <b><u>R Zhong</u></b>, B Qiu, A Archenti<br>
+                    <span class="research-journal-title">IOP Conference Series: Materials Science and Engineering 1342 (1), 012065</span>, 2026<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:CHSYGLWDkRkC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">A lightweight human posture predictive assessment in human-robot collaboration via diffusion mamba</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Z Zhang, Y Feng, Y Yuan, J Tan<br>
+                    <span class="research-journal-title">2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:a0OBvERweLwC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2025lightweight')">Bib</span>
+                    <div id="zhong2025lightweight" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">An Assembly Quality Inspection Framework for Small-batch Products via HCPS and HAAS⋆</span><br>
+                    <b><u>R Zhong</u></b>, Y Feng, B Hu, G Zheng, X Li, X Chen, J Tan<br>
+                    <span class="research-journal-title">IFAC-PapersOnLine 59 (10), 2374-2379</span>, 2025<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:D03iK_w7-QYC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">A Crease-Based Bending-Insensitive Liquid Metal Sensor for Pressure Measurement on Curved Surfaces</span><br>
+                    P Li, J Song, X Song, <b><u>R Zhong</u></b>, Z Hong, Y Feng, J Tan<br>
+                    <span class="research-journal-title">2024 International Conference on Networking, Sensing and Control (ICNSC), 1-6</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:NhqRSupF_l8C">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">A spatio-temporal transformer network for human motion prediction in human-robot collaboration</span><br>
+                    Y Yuan, B Wang, <b><u>R Zhong</u></b>, B Hu<br>
+                    <span class="research-journal-title">2024 International Conference on Networking, Sensing and Control (ICNSC), 1-6</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:k_IJM867U9cC">Scholar</a>
+                </li>
+                <li>
+                    <span class="pub-title">Deep Causal Domain Generalization Network for Human Action Recognition in Internet of Behaviors</span><br>
+                    <b><u>R Zhong</u></b>, Y Feng, B Hu, Z Zhang, X Song, J Tan<br>
+                    <span class="research-journal-title">2024 International Conference on Networking, Sensing and Control (ICNSC), 1-6</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:isC4tDSrTZIC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2024deep')">Bib</span>
+                    <div id="zhong2024deep" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">Edge computing empowered digital twin: an end-to-end computing task scheduling approach</span><br>
+                    <b><u>R Zhong</u></b>, Y Feng, X Song, B Hu, Y Wang, P Li, J Tan<br>
+                    <span class="research-journal-title">2024 IEEE 20th International Conference on Automation Science and Engineering (CASE)</span>, 2024<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:e5wmG9Sq2KIC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2024edge')">Bib</span>
+                    <div id="zhong2024edge" class="bib-content"></div>
+                </li>
+                <li>
+                    <span class="pub-title">A Human Digital Twin Based Framework for Human–Robot Hand-Over Task Intention Recognition</span><br>
+                    <b><u>R Zhong</u></b>, B Hu, Z Hong, Z Zhang, Y Feng, J Tan<br>
+                    <span class="research-journal-title">ICMD: International Conference on Mechanical Design, 283-295</span>, 2023<br>
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=2H06Nd0AAAAJ&amp;cstart=20&amp;pagesize=80&amp;sortby=pubdate&amp;citation_for_view=2H06Nd0AAAAJ:HDshCWvjkbEC">Scholar</a> / <span class="bib-button" onclick="toggleBib('zhong2023human')">Bib</span>
+                    <div id="zhong2023human" class="bib-content"></div>
+                </li>
+            </ol>
+        </div>
+
+        <footer class="site-footer">
+            <p>
+                &copy; 2026 Ruirui Zhong. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/js/site.js"></script>
+</body>
+
+</html>
