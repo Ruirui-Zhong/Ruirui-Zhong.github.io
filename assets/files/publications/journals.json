@@ -1,0 +1,170 @@
+[
+  {
+    "title": "A two-stage framework for learning human-to-robot object handover policy from 4D spatiotemporal flow",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Liu, Zhihao and Qin, Qiang and Feng, Yixiong and Wang, Xi Vincent and Wang, Lihui and Tan, Jianrong",
+    "venue": "Robotics and Computer-Integrated Manufacturing",
+    "year": 2026,
+    "bibId": "zhong2026two"
+  },
+  {
+    "title": "A vision-based approach combining event and RGB sensors towards Human-Robot collaborative assembly",
+    "authors": "Qiang Qin and Sebastian Thiede and Ruirui Zhong and Xi Vincent Wang",
+    "venue": "CIRP Annals",
+    "year": 2026,
+    "bibId": "qin2026event"
+  },
+  {
+    "title": "ConstrucTwin: Digital Twin-Driven Multirobot Construction System Toward Industry 5.0",
+    "authors": "Liu, Zhihao and Silva, Jorge and Zhong, Ruirui and Qin, Qiang and Roy, Neelabhro and Nan Fernandez-Ayala, Victor and Lesko, Johan and Håkansson, Ulf and Sandberg, Sara and Dimarogonas, Dimos V. and Gross, James and Vincent Wang, Xi and Wang, Lihui",
+    "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+    "year": 2026,
+    "bibId": "liu2026constructwin"
+  },
+  {
+    "title": "Fatigue delamination shape prognostics in composites using numerical simulation-assisted transfer learning",
+    "authors": "Zhong, Ruirui and Wang, Xi Vincent and Wang, Lihui and Chiach\\'\\io, Manuel and Cadini, Francesco and Sbarufatti, Claudio and Li, Tianzhi",
+    "venue": "Advanced Engineering Informatics",
+    "year": 2026,
+    "bibId": "zhong2026fatigue"
+  },
+  {
+    "title": "FineMLD: A fine-grained motion latent diffusion for human motion prediction in Human--robot Collaboration",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Feng, Yixiong and Liu, Zhihao and Qin, Qiang and Wang, Xi Vincent and Wang, Lihui and Tan, Jianrong",
+    "venue": "Advanced Engineering Informatics",
+    "year": 2026,
+    "bibId": "zhong2026finemld"
+  },
+  {
+    "title": "Robot digital twin systems in manufacturing: Technologies, applications, trends and challenges",
+    "authors": "Qin, Qiang and Liu, Zhihao and Zhong, Ruirui and Wang, Xi Vincent and Wang, Lihui and Wiktorsson, Magnus and Wang, Wei",
+    "venue": "Robotics and Computer-Integrated Manufacturing",
+    "year": 2026,
+    "bibId": "qin2026robot"
+  },
+  {
+    "title": "A federated deep domain adaptation-based framework for nuclear power steam turbines considering privacy-preserving",
+    "authors": "Hu, Bingtao and Zhong, Ruirui and Song, Junjie and Guo, Jingren and Wang, Yong and Lou, Shanhe and Tan, Jianrong",
+    "venue": "IET Collaborative Intelligent Manufacturing",
+    "year": 2025,
+    "bibId": "hu2025federated"
+  },
+  {
+    "title": "Designing likelihood function under nuisance components in block particle filter",
+    "authors": "Tianzhi Li and Ruirui Zhong and Tianyu Wang and Jan Kronqvist and Mario Romero and Ming Xiao and Xi Vincent Wang",
+    "venue": "Mechanical Systems and Signal Processing",
+    "year": 2025,
+    "bibId": "li2026designing"
+  },
+  {
+    "title": "Digital Shop Floor Manufacturing Capability Modeling and Adaptive Scheduling in Human-cyber-physical Interconnected Environment",
+    "authors": "Hu, Bingtao and Zhong, Ruirui and Feng, Yixiong and Yang, Chen and Wang, Tianyue and Hong, Zhaoxi and Tan, Jianrong",
+    "venue": "Journal of Mechanical Engineering",
+    "year": 2025,
+    "bibId": "hu2025digital"
+  },
+  {
+    "title": "Digital Twin-driven Inversion of Assembly Precision for Industrial Equipment: Challenges, Progress and Perspectives",
+    "authors": "Cheng, Dinghao and Hu, Bingtao and Feng, Yixiong and Yang, Jiangxin and Zhong, Ruirui and Wang, Tianyue and Tan, Jianrong",
+    "venue": "Chinese Journal of Mechanical Engineering",
+    "year": 2025,
+    "bibId": "cheng2025digital"
+  },
+  {
+    "title": "Hybrid Programming-based Scheduling Approach for Many Heterogeneous Computing Tasks with Asynchronous Generation in IIoT",
+    "authors": "Hu, Bingtao and Zhong, Ruirui and Wang, Yong and Wang, Tianyue and Feng, Yixiong and Zhou, MengChu and Tan, Jianrong",
+    "venue": "IEEE Internet of Things Journal",
+    "year": 2025,
+    "bibId": "hu2025hybrid"
+  },
+  {
+    "title": "Magnetointeractive Cr2Te3-Coated Liquid Metal Droplets for Flexible Memory Arrays and Wearable Sensors",
+    "authors": "Li, Puyan and Feng, Yixiong and Ding, Chenchen and Zhong, Ruirui and Yan, Weiyu and Song, Junjie and Hong, Zhaoxi and Hu, Bingtao and Tan, Jianrong and Sun, Jingyu and others",
+    "venue": "Advanced Materials",
+    "year": 2025,
+    "bibId": "li2025magnetointeractive"
+  },
+  {
+    "title": "Multi-factor embedding GNN-based traffic flow prediction considering intersection similarity",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Wang, Fei and Feng, Yixiong and Li, Zhiwu and Song, Xiuju and Wang, Yong and Lou, Shanhe and Tan, Jianrong",
+    "venue": "Neurocomputing",
+    "year": 2025,
+    "bibId": "zhong2024multi"
+  },
+  {
+    "title": "Solving flexible job-shop problem considering skilled workers via multi-domain graph attention network",
+    "authors": "Zhong, Ruirui and Feng, Yixiong and Zhang, Ansi and Li, Chuanjiang and Jin, Kebing and Li, Zhiwu and Tan, Jianrong",
+    "venue": "International Journal of Production Research",
+    "year": 2025,
+    "bibId": "zhong2025solving"
+  },
+  {
+    "title": "St-Graphormer: spatio-temporal graph transformer for end-to-end traffic forecasting",
+    "authors": "Wang, Zhanchi and Hu, Yi and Zhong, Ruirui and Hu, Bingtao and Cheng, Dinghao and Feng, Yixiong and Tan, Jianrong",
+    "venue": "The Journal of Supercomputing",
+    "year": 2025,
+    "bibId": "wang2025stgraphormer"
+  },
+  {
+    "title": "Toward secure industrial internet of behaviours: a federated learning-based lightweight human behaviour recognition method with selective state space models",
+    "authors": "Hu, Bingtao and Zhong, Ruirui and Feng, Yixiong and Yang, Jiangxin and Li, Puyan and Chen, Meihao and Tan, Jianrong",
+    "venue": "International Journal of Production Research",
+    "year": 2025,
+    "bibId": "hu2025toward"
+  },
+  {
+    "title": "Human-robot handover task intention recognition framework by fusing human digital twin and deep domain adaptation",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Hong, Zhaoxi and Zhang, Zhifeng and Lou, Shanhe and Song, Xiuju and Feng, Yixiong and Tan, Jianrong",
+    "venue": "Journal of Engineering Design",
+    "year": 2024,
+    "bibId": "zhong2024human"
+  },
+  {
+    "title": "Lithium-ion battery remaining useful life prediction: a federated learning-based approach",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Feng, Yixiong and Lou, Shanhe and Hong, Zhaoxi and Wang, Fei and Li, Guangshen and Tan, Jianrong",
+    "venue": "Energy, Ecology and Environment",
+    "year": 2024,
+    "bibId": "zhong2024lithium"
+  },
+  {
+    "title": "Multiscale cost-sensitive learning-based assembly quality prediction approach under imbalanced data",
+    "authors": "Wang, Tianyue and Hu, Bingtao and Feng, Yixiong and Gong, Hao and Zhong, Ruirui and Yang, Chen and Tan, Jianrong",
+    "venue": "Advanced Engineering Informatics",
+    "year": 2024,
+    "bibId": "wang2024multiscale"
+  },
+  {
+    "title": "Smart scheduling of hanging workshop via digital twin and deep reinforcement learning",
+    "authors": "Pan, Jianguo and Zhong, Ruirui and Hu, Bingtao and Feng, Yixiong and Zhang, Zhifeng and Tan, Jianrong",
+    "venue": "Flexible Services and Manufacturing Journal",
+    "year": 2024,
+    "bibId": "pan2024smart"
+  },
+  {
+    "title": "Two-stage imbalanced learning-based quality prediction method for wheel hub assembly",
+    "authors": "Wang, Tianyue and Peng, Tao and Hu, Bingtao and Zhong, Ruirui and Feng, Yixiong and Chen, Xiangjun and Tan, Jianrong",
+    "venue": "Advanced Engineering Informatics",
+    "year": 2024,
+    "bibId": "wang2024two"
+  },
+  {
+    "title": "Uncertainty-aware nuclear power turbine vibration fault diagnosis method integrating machine learning and heuristic algorithm",
+    "authors": "Zhong, Ruirui and Feng, Yixiong and Li, Puyan and Wu, Xuanyu and Guo, Ao and Zhang, Ansi and Li, Chuanjiang",
+    "venue": "IET Collaborative Intelligent Manufacturing",
+    "year": 2024,
+    "bibId": "zhong2024uncertainty"
+  },
+  {
+    "title": "Construction of human digital twin model based on multimodal data and its application in locomotion mode identification",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Feng, Yixiong and Zheng, Hao and Hong, Zhaoxi and Lou, Shanhe and Tan, Jianrong",
+    "venue": "Chinese Journal of Mechanical Engineering",
+    "year": 2023,
+    "bibId": "zhong2023construction"
+  },
+  {
+    "title": "Irregular polygons nesting algorithm driven by design knowledge and application",
+    "authors": "Feng, Yixiong and Zhong, Ruirui and Zhang, Zhifeng and Huang, Cheng and Li, Zhongkai and Hu, Bingtao and Hong, Zhaoxi and Tan, Jianrong",
+    "venue": "Computer Integrated Manufacturing System",
+    "year": 2023,
+    "bibId": "feng2023irregular"
+  }
+]

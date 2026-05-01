@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Integrating Domain Knowledge and Data for Fault Diagnosis in Production Machinery: A Hybrid Framework",
+    "authors": "Sun, Pu and Zhong, Ruirui and Qiu, Binbin and Archenti, Andreas",
+    "venue": "IOP Conference Series: Materials Science and Engineering",
+    "year": 2026,
+    "bibId": "sun2026domain"
+  },
+  {
+    "title": "A Lightweight Human Posture Predictive Assessment in Human-robot Collaboration via Diffusion Mamba",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Zhang, Zhifeng and Feng, Yixiong and Yuan, Yixiu and Tan, Jianrong",
+    "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
+    "year": 2025,
+    "bibId": "zhong2025lightweight"
+  },
+  {
+    "title": "An Assembly Quality Inspection Framework for Small-batch Products via HCPS and HAAS",
+    "authors": "Zhong, Ruirui and Feng, Yixiong and Hu, Bingtao and Zheng, Gengfeng and Li, Xupeng and Chen, Xiangjun and Tan, Jianrong",
+    "venue": "IFAC-PapersOnLine",
+    "year": 2025,
+    "bibId": "zhong2025assembly"
+  },
+  {
+    "title": "A Crease-Based Bending-Insensitive Liquid Metal Sensor for Pressure Measurement on Curved Surfaces",
+    "authors": "Li, Puyan and Song, Junjie and Song, Xiuju and Zhong, Ruirui and Hong, Zhaoxi and Feng, Yixiong and Tan, Jianrong",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "year": 2024,
+    "bibId": "li2024crease"
+  },
+  {
+    "title": "A Spatio-Temporal Transformer Network for Human Motion Prediction in Human-Robot Collaboration",
+    "authors": "Yuan, Yixiu and Wang, Baicun and Zhong, Ruirui and Hu, Bingtao",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "year": 2024,
+    "bibId": "yuan2024spatio"
+  },
+  {
+    "title": "Deep Causal Domain Generalization Network for Human Action Recognition in Internet of Behaviors",
+    "authors": "Zhong, Ruirui and Feng, Yixiong and Hu, Bingtao and Zhang, Zhifeng and Song, Xiuju and Tan, Jianrong",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "year": 2024,
+    "bibId": "zhong2024deep"
+  },
+  {
+    "title": "Edge Computing Empowered Digital Twin: An End-to-End Computing Task Scheduling Approach",
+    "authors": "Zhong, Ruirui and Feng, Yixiong and Song, Xiuju and Hu, Bingtao and Wang, Yong and Li, Puyan and Tan, Jianrong",
+    "venue": "2024 IEEE 20th International Conference on Automation Science and Engineering (CASE)",
+    "year": 2024,
+    "bibId": "zhong2024edge"
+  },
+  {
+    "title": "A Human Digital Twin Based Framework for Human--Robot Hand-Over Task Intention Recognition",
+    "authors": "Zhong, Ruirui and Hu, Bingtao and Hong, Zhaoxi and Zhang, Zhifeng and Feng, Yixiong and Tan, Jianrong",
+    "venue": "ICMD: International Conference on Mechanical Design",
+    "year": 2023,
+    "bibId": "zhong2023human"
+  }
+]
