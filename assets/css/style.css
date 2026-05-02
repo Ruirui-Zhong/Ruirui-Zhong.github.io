@@ -473,6 +473,13 @@ strong {
     font-weight: 600;
 }
 
+.publications-group {
+    padding: 0.85rem 1rem 0.95rem;
+    border-left: 3px solid var(--luka-border);
+    background: color-mix(in srgb, var(--luka-surface) 60%, transparent);
+    margin-bottom: 1rem;
+}
+
 .education-list {
     display: grid;
     gap: 0.7rem;
