@@ -11,16 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <title>Projects | Ruirui Zhong</title>
-    <style>
-        .project-work ul {
-            list-style-type: disc !important;
-            list-style-position: outside !important;
-            padding-left: 1.2em;
-        }
-    </style>
 </head>
 
-<body class="theme-luka">
+<body class="theme-luka projects-page">
     <div class="site-shell">
         <header id="header">
             <div class="nav-right">
@@ -35,29 +28,129 @@
 
         <div class="section visible" id="project">
             <h1><u>Projects</u></h1>
-            <div class="project-work">
-                <a class="project-thumb">
-                    <video width="300" autoplay loop muted>
-                        <source src="assets/video/visual_servoing.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <h3 class="project-proj-title">Digital Futures: Towards Safe Smart Construction: Algorithms, Digital Twins and Infrastructures</h3>
-                <p style="color: #888;">Swedish Digital Futures, <em>2024.11 - 2025.5</em></p>
-                <ul>
-                    <li>Developed a vision-based 6D pose estimation system for robot servoing and precise manipulation.</li>
-                </ul>
+            <div class="project-intro">
+                <p>Selected projects in embodied AI, industrial robotics, and human-robot collaboration.</p>
             </div>
-            <div class="project-work">
-                <a class="project-thumb">
-                    <video width="300" autoplay loop muted>
-                        <source src="assets/video/welding–gluing.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <h3 class="project-proj-title">Autonomous Task and Motion Planning for Multi-Robot Systems via Visual Foundation Models and Large Language Models</h3>
-                <p style="color: #888;">Centre of Excellence in Production Research, <em>2025.5 - 2025.10</em></p>
-                <ul>
-                    <li>Develop foundation model-based scene understanding and integrate LLM-driven task planning for autonomous multi-robot manipulation.</li>
-                </ul>
+
+            <div class="project-list">
+                <article class="project-work">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="assets/video/vlm-multirobot-planning.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-index">01</span>
+                            <span class="project-period">Jun. 2025 - Oct. 2025</span>
+                        </div>
+                        <h3 class="project-proj-title">Vision-Language Models-based Autonomous Multi-robot Planning</h3>
+                        <div class="project-tags">
+                            <span>Visual Foundation Models</span>
+                            <span>Vision-Language Models</span>
+                            <span>Motion Planning</span>
+                        </div>
+                        <ul>
+                            <li>Built a zero-shot perception-reasoning-planning pipeline that converts natural-language instructions and raw visual inputs into executable multi-robot plans.</li>
+                            <li>Integrated visual foundation models, VLM scene understanding, LLM code generation, ROS 2/MoveIt 2 execution, and validated untrained industrial tasks on ABB robots.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-work">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="assets/video/diffusion-handover-policy.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-index">02</span>
+                            <span class="project-period">Feb. 2025 - Jun. 2025</span>
+                        </div>
+                        <h3 class="project-proj-title">Diffusion Model-based Policy Learning for Human-to-Robot Object Handover</h3>
+                        <div class="project-tags">
+                            <span>Imitation Learning</span>
+                            <span>Diffusion Policy</span>
+                            <span>Human-to-Robot Handover</span>
+                        </div>
+                        <ul>
+                            <li>Developed a two-stage imitation learning framework that combines offline demonstration synthesis with diffusion-based handover policy learning.</li>
+                            <li>Designed a 4D spatiotemporal flow representation for human-object motion and validated the learned policy on an ABB IRB1600 robot with an 87.5% task success rate.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-work">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="assets/video/digital-twin-visual-servoing.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-index">03</span>
+                            <span class="project-period">Oct. 2024 - Jan. 2025</span>
+                        </div>
+                        <h3 class="project-proj-title">Digital Twin-driven Multi-robot Intelligent Construction System</h3>
+                        <div class="project-tags">
+                            <span>Digital Twin</span>
+                            <span>Multi-robot Construction</span>
+                            <span>Visual Servoing</span>
+                        </div>
+                        <ul>
+                            <li>Developed ConstrucTwin, a digital twin-driven multi-robot framework linking physical ABB robots, Unity3D twins, communication networks, and task-motion planning.</li>
+                            <li>Built RGB-D visual servoing, real-time monitoring, 6D pose estimation, and MoveIt 2-based hierarchical planning for robotic construction scenarios.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-work">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="assets/video/finemld-motion-prediction.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-index">04</span>
+                            <span class="project-period">Mar. 2024 - Jun. 2025</span>
+                        </div>
+                        <h3 class="project-proj-title">Diverse Human Motion Prediction for Human-Robot Collaboration</h3>
+                        <div class="project-tags">
+                            <span>Human Motion Prediction</span>
+                            <span>Collision Avoidance</span>
+                            <span>Human-Robot Collaboration</span>
+                        </div>
+                        <ul>
+                            <li>Developed FineMLD, a fine-grained motion latent diffusion framework for diverse and plausible human motion prediction in shared workspaces.</li>
+                            <li>Collected 75,541 synchronized human-robot motion frames on an ABB IRB1600 HRC platform and integrated prediction into closed-loop collision avoidance.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-work project-work-text">
+                    <div class="project-media project-media-placeholder">
+                        <i class="fa-solid fa-person-rays"></i>
+                        <span>Multimodal Human Digital Twin</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-index">05</span>
+                            <span class="project-period">Dec. 2021 - Dec. 2023</span>
+                        </div>
+                        <h3 class="project-proj-title">Multimodal Human Digital Twin Modeling for Human-Robot Collaboration</h3>
+                        <div class="project-tags">
+                            <span>Multimodal Sensing</span>
+                            <span>Human Digital Twin</span>
+                            <span>Human-Robot Collaboration</span>
+                        </div>
+                        <ul>
+                            <li>Built a multimodal human digital twin framework for motion pattern recognition and handover intention prediction in HRC.</li>
+                            <li>Integrated IMU, EMG, RGB-D, and pressure sensing with BiLSTM/ST-GCN fusion and domain adaptation for robust cross-subject recognition.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </div>
 
