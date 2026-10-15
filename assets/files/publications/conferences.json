@@ -2,57 +2,81 @@
   {
     "title": "Integrating Domain Knowledge and Data for Fault Diagnosis in Production Machinery: A Hybrid Framework",
     "authors": "Sun, Pu and Zhong, Ruirui and Qiu, Binbin and Archenti, Andreas",
-    "venue": "IOP Conference Series: Materials Science and Engineering",
+    "venue": "IOP Conference Series: Materials Science and Engineering, 2026",
     "year": 2026,
-    "bibId": "sun2026domain"
+    "bibId": "sun2026domain",
+    "kind": "conference",
+    "doi": "10.1088/1757-899X/1342/1/012065",
+    "url": "https://doi.org/10.1088/1757-899X/1342/1/012065"
   },
   {
     "title": "A Lightweight Human Posture Predictive Assessment in Human-robot Collaboration via Diffusion Mamba",
     "authors": "Zhong, Ruirui and Hu, Bingtao and Zhang, Zhifeng and Feng, Yixiong and Yuan, Yixiu and Tan, Jianrong",
-    "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
+    "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE), 2025",
     "year": 2025,
-    "bibId": "zhong2025lightweight"
+    "bibId": "zhong2025lightweight",
+    "kind": "conference",
+    "doi": "10.1109/CASE58245.2025.11163834",
+    "url": "https://doi.org/10.1109/CASE58245.2025.11163834"
   },
   {
     "title": "An Assembly Quality Inspection Framework for Small-batch Products via HCPS and HAAS",
     "authors": "Zhong, Ruirui and Feng, Yixiong and Hu, Bingtao and Zheng, Gengfeng and Li, Xupeng and Chen, Xiangjun and Tan, Jianrong",
-    "venue": "IFAC-PapersOnLine",
+    "venue": "IFAC-PapersOnLine, 2025",
     "year": 2025,
-    "bibId": "zhong2025assembly"
+    "bibId": "zhong2025assembly",
+    "kind": "conference",
+    "doi": "10.1016/j.ifacol.2025.09.399",
+    "url": "https://doi.org/10.1016/j.ifacol.2025.09.399"
   },
   {
     "title": "A Crease-Based Bending-Insensitive Liquid Metal Sensor for Pressure Measurement on Curved Surfaces",
     "authors": "Li, Puyan and Song, Junjie and Song, Xiuju and Zhong, Ruirui and Hong, Zhaoxi and Feng, Yixiong and Tan, Jianrong",
-    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC), 2024",
     "year": 2024,
-    "bibId": "li2024crease"
+    "bibId": "li2024crease",
+    "kind": "conference",
+    "doi": "10.1109/ICNSC62968.2024.10760124",
+    "url": "https://doi.org/10.1109/ICNSC62968.2024.10760124"
   },
   {
     "title": "A Spatio-Temporal Transformer Network for Human Motion Prediction in Human-Robot Collaboration",
     "authors": "Yuan, Yixiu and Wang, Baicun and Zhong, Ruirui and Hu, Bingtao",
-    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC), 1-6, 2024",
     "year": 2024,
-    "bibId": "yuan2024spatio"
+    "bibId": "yuan2024spatio",
+    "kind": "conference",
+    "doi": "10.1109/ICNSC62968.2024.10759898",
+    "url": "https://doi.org/10.1109/ICNSC62968.2024.10759898"
   },
   {
     "title": "Deep Causal Domain Generalization Network for Human Action Recognition in Internet of Behaviors",
     "authors": "Zhong, Ruirui and Feng, Yixiong and Hu, Bingtao and Zhang, Zhifeng and Song, Xiuju and Tan, Jianrong",
-    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC)",
+    "venue": "2024 International Conference on Networking, Sensing and Control (ICNSC), 2024",
     "year": 2024,
-    "bibId": "zhong2024deep"
+    "bibId": "zhong2024deep",
+    "kind": "conference",
+    "doi": "10.1109/ICNSC62968.2024.10760119",
+    "url": "https://doi.org/10.1109/ICNSC62968.2024.10760119"
   },
   {
     "title": "Edge Computing Empowered Digital Twin: An End-to-End Computing Task Scheduling Approach",
     "authors": "Zhong, Ruirui and Feng, Yixiong and Song, Xiuju and Hu, Bingtao and Wang, Yong and Li, Puyan and Tan, Jianrong",
-    "venue": "2024 IEEE 20th International Conference on Automation Science and Engineering (CASE)",
+    "venue": "2024 IEEE 20th International Conference on Automation Science and Engineering (CASE), 2024",
     "year": 2024,
-    "bibId": "zhong2024edge"
+    "bibId": "zhong2024edge",
+    "kind": "conference",
+    "doi": "10.1109/CASE59546.2024.10711331",
+    "url": "https://doi.org/10.1109/CASE59546.2024.10711331"
   },
   {
-    "title": "A Human Digital Twin Based Framework for Human--Robot Hand-Over Task Intention Recognition",
+    "title": "A Human Digital Twin Based Framework for Human–Robot Hand-Over Task Intention Recognition",
     "authors": "Zhong, Ruirui and Hu, Bingtao and Hong, Zhaoxi and Zhang, Zhifeng and Feng, Yixiong and Tan, Jianrong",
-    "venue": "ICMD: International Conference on Mechanical Design",
+    "venue": "ICMD: International Conference on Mechanical Design, 2023",
     "year": 2023,
-    "bibId": "zhong2023human"
+    "bibId": "zhong2023human",
+    "kind": "conference",
+    "doi": "10.1007/978-981-97-0922-9_18",
+    "url": "https://doi.org/10.1007/978-981-97-0922-9_18"
   }
 ]
