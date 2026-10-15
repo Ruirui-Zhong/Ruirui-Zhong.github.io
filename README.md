@@ -15,3 +15,5 @@ This is a static HTML, CSS and JavaScript site, published from the repository ro
 Shared styles and interactions are in `assets/css/style.css` and `assets/js/site.js`. BibTeX files and publication records are in `assets/files/`. Publication lists are rendered in HTML; update the corresponding HTML when changing publication records.
 
 Keep `CNAME` set to `www.ruiruiz.com`. `.nojekyll` enables direct publication of the static files.
+
+Review activity is recorded in `assets/files/reviewing-record.json`; counts and the Academic service page should be updated together. The Home footer records the last actual content update date, rather than the visitor’s current date.

@@ -1,0 +1,230 @@
+{
+  "as_of": "2026-10-15",
+  "counting_basis": "Review counts supplied by the author; journal titles and conference event entries are retained as listed.",
+  "journals": [
+    {
+      "name": "IEEE Transactions on Industrial Informatics",
+      "reviews": 9
+    },
+    {
+      "name": "IEEE Transactions on Automation Science and Engineering",
+      "reviews": 3
+    },
+    {
+      "name": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+      "reviews": 2
+    },
+    {
+      "name": "IEEE Transactions on Vehicular Technology",
+      "reviews": 2
+    },
+    {
+      "name": "IEEE Robotics and Automation Letters",
+      "reviews": 2
+    },
+    {
+      "name": "Robotics and Computer-Integrated Manufacturing",
+      "reviews": 15
+    },
+    {
+      "name": "Advanced Engineering Informatics",
+      "reviews": 8
+    },
+    {
+      "name": "Engineering Applications of Artificial Intelligence",
+      "reviews": 15
+    },
+    {
+      "name": "Knowledge-Based Systems",
+      "reviews": 2
+    },
+    {
+      "name": "Technology in Society",
+      "reviews": 2
+    },
+    {
+      "name": "Reliability Engineering & System Safety",
+      "reviews": 1
+    },
+    {
+      "name": "Neural Networks",
+      "reviews": 1
+    },
+    {
+      "name": "Computers & Industrial Engineering",
+      "reviews": 2
+    },
+    {
+      "name": "Robotics and Autonomous Systems",
+      "reviews": 3
+    },
+    {
+      "name": "Neurocomputing",
+      "reviews": 5
+    },
+    {
+      "name": "International Journal of Production Research",
+      "reviews": 1
+    },
+    {
+      "name": "Journal of Traffic and Transportation Engineering",
+      "reviews": 1
+    },
+    {
+      "name": "Nonlinear Dynamics",
+      "reviews": 1
+    },
+    {
+      "name": "Sustainable Futures",
+      "reviews": 2
+    },
+    {
+      "name": "Chinese Journal of Mechanical Engineering",
+      "reviews": 2
+    },
+    {
+      "name": "Computers & Electrical Engineering",
+      "reviews": 3
+    },
+    {
+      "name": "Computer Communications",
+      "reviews": 2
+    },
+    {
+      "name": "Industrial Crops & Products",
+      "reviews": 1
+    },
+    {
+      "name": "Scientific Reports",
+      "reviews": 3
+    },
+    {
+      "name": "The Journal of Supercomputing",
+      "reviews": 4
+    },
+    {
+      "name": "Neural Computing and Applications",
+      "reviews": 1
+    },
+    {
+      "name": "SoftwareX",
+      "reviews": 2
+    },
+    {
+      "name": "Array",
+      "reviews": 1
+    },
+    {
+      "name": "Cogent Engineering",
+      "reviews": 2
+    },
+    {
+      "name": "Connection Science",
+      "reviews": 1
+    },
+    {
+      "name": "Frontiers in Robotics and AI",
+      "reviews": 2
+    },
+    {
+      "name": "Frontiers in Rehabilitation Sciences",
+      "reviews": 1
+    },
+    {
+      "name": "Frontiers in Cognition",
+      "reviews": 1
+    },
+    {
+      "name": "Journal of Systems and Control Engineering",
+      "reviews": 2
+    },
+    {
+      "name": "Proceedings of the Institution of Mechanical Engineers",
+      "reviews": 1
+    },
+    {
+      "name": "Concurrency and Computation",
+      "reviews": 1
+    },
+    {
+      "name": "Discover Applied Sciences",
+      "reviews": 1
+    },
+    {
+      "name": "Discover Artificial Intelligence",
+      "reviews": 2
+    },
+    {
+      "name": "Discover Computing",
+      "reviews": 1
+    },
+    {
+      "name": "PeerJ Computer Science",
+      "reviews": 1
+    },
+    {
+      "name": "Open Research Europe",
+      "reviews": 1
+    }
+  ],
+  "conferences": [
+    {
+      "name": "CIRP CATS 2026",
+      "series": "CIRP CATS",
+      "reviews": 1
+    },
+    {
+      "name": "IEEE ICRA 2026",
+      "series": "IEEE ICRA",
+      "reviews": 1
+    },
+    {
+      "name": "IEEE CASE 2026",
+      "series": "IEEE CASE",
+      "reviews": 3
+    },
+    {
+      "name": "IEEE CIS-RAM",
+      "series": "IEEE CIS-RAM",
+      "reviews": 1
+    },
+    {
+      "name": "IEEE TrustCom 2025",
+      "series": "IEEE TrustCom",
+      "reviews": 3
+    },
+    {
+      "name": "IEEE CASE 2025",
+      "series": "IEEE CASE",
+      "reviews": 1
+    },
+    {
+      "name": "SME NAMRC 53",
+      "series": "SME NAMRC",
+      "reviews": 1
+    },
+    {
+      "name": "IFAC MIM 2025",
+      "series": "IFAC MIM",
+      "reviews": 1
+    },
+    {
+      "name": "IEEE ICNSC 2024",
+      "series": "IEEE ICNSC",
+      "reviews": 2
+    },
+    {
+      "name": "ACAIT 2023",
+      "series": "ACAIT",
+      "reviews": 3
+    }
+  ],
+  "summary": {
+    "journal_titles": 41,
+    "journal_reviews": 113,
+    "conference_entries": 10,
+    "conference_series": 9,
+    "conference_reviews": 17,
+    "total_reviews": 130
+  }
+}
